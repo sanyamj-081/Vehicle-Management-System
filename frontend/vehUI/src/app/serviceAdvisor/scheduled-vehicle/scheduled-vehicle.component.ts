@@ -40,6 +40,7 @@ export class ScheduledVehicleComponent implements OnInit {
       }
     );
   }
+  //for commit purpose
 
   loadWorkItems(): void {
     this.apiService.getWorkItems().subscribe(
