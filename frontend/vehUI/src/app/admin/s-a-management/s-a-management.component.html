@@ -1,0 +1,105 @@
+<div class="container">
+
+  <!-- Add New Service Advisor -->
+  <div>
+    <h3>Add New Service Advisor</h3>
+    <form (ngSubmit)="addServiceAdvisor()">
+      <label for="firstName">First Name:</label>
+      <input id="firstName" [(ngModel)]="newServiceAdvisor.firstName" name="firstName" required>
+
+      <label for="lastName">Last Name:</label>
+      <input id="lastName" [(ngModel)]="newServiceAdvisor.lastName" name="lastName" required>
+
+      <label for="email">Email:</label>
+      <input id="email" [(ngModel)]="newServiceAdvisor.email" name="email" required>
+
+      <label for="password">Password:</label>
+      <input id="password" [(ngModel)]="newServiceAdvisor.password" name="password" required type="password">
+
+      <label for="mobileNumber">Mobile Number:</label>
+      <input id="mobileNumber" [(ngModel)]="newServiceAdvisor.mobileNumber" name="mobileNumber" required>
+
+      <label for="accountStatus">Account Status:</label>
+      <select id="accountStatus" [(ngModel)]="newServiceAdvisor.accountStatus" name="accountStatus" required>
+        <option *ngFor="let status of accountStatuses" [value]="status">{{ status }}</option>
+      </select>
+
+      <button type="submit">Add Service Advisor</button>
+    </form>
+  </div>
+
+  <br>
+
+  <!-- Service Advisor List -->
+  <div>
+    <h3>Service Advisor List</h3>
+    <table mat-table [dataSource]="serviceAdvisors">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>ID</th>
+        <td mat-cell *matCellDef="let advisor">{{ advisor.id }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="firstName">
+        <th mat-header-cell *matHeaderCellDef>First Name</th>
+        <td mat-cell *matCellDef="let advisor">{{ advisor.firstName }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="lastName">
+        <th mat-header-cell *matHeaderCellDef>Last Name</th>
+        <td mat-cell *matCellDef="let advisor">{{ advisor.lastName }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef>Email</th>
+        <td mat-cell *matCellDef="let advisor">{{ advisor.email }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="mobileNumber">
+        <th mat-header-cell *matHeaderCellDef>Mobile Number</th>
+        <td mat-cell *matCellDef="let advisor">{{ advisor.mobileNumber }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="accountStatus">
+        <th mat-header-cell *matHeaderCellDef>Account Status</th>
+        <td mat-cell *matCellDef="let advisor">{{ advisor.accountStatus }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let advisor">
+          <button (click)="editServiceAdvisor(advisor)">Edit</button>
+          <button (click)="deleteServiceAdvisor(advisor.id)">Delete</button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+
+  <!-- Edit Service Advisor Form -->
+  <div *ngIf="selectedServiceAdvisor">
+    <h3>Edit Service Advisor</h3>
+    <form (ngSubmit)="updateServiceAdvisor()">
+      <label for="editFirstName">First Name:</label>
+      <input id="editFirstName" [(ngModel)]="selectedServiceAdvisor.firstName" name="editFirstName" required>
+
+      <label for="editLastName">Last Name:</label>
+      <input id="editLastName" [(ngModel)]="selectedServiceAdvisor.lastName" name="editLastName" required>
+
+      <label for="editEmail">Email:</label>
+      <input id="editEmail" [(ngModel)]="selectedServiceAdvisor.email" name="editEmail" required>
+
+      <label for="editMobileNumber">Mobile Number:</label>
+      <input id="editMobileNumber" [(ngModel)]="selectedServiceAdvisor.mobileNumber" name="editMobileNumber" required>
+
+      <label for="editAccountStatus">Account Status:</label>
+      <select id="editAccountStatus" [(ngModel)]="selectedServiceAdvisor.accountStatus" name="editAccountStatus" required>
+        <option *ngFor="let status of accountStatuses" [value]="status">{{ status }}</option>
+      </select>
+
+      <button type="submit">Update Service Advisor</button>
+      <button (click)="selectedServiceAdvisor = null" type="button">Cancel</button>
+    </form>
+  </div>
+</div>

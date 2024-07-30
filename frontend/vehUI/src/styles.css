@@ -1,0 +1,71 @@
+/* Define color variables */
+:root {
+  --primary-color: #3f51b5; /* Indigo */
+  --accent-color: #4c8e4a;  /* Dark Green */
+  --warn-color: #f91302;    /* Red */
+  --light-color: #697581;
+  --black-color: #000000;
+  --dark-color: #343a40;
+  --white-color: #ffffff;
+}
+
+/* General styles */
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  margin: 0;
+  padding: 0;
+}
+
+/* Toolbar styles */
+mat-toolbar {
+  background-color: red;
+  color: black;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+}
+
+mat-toolbar .spacer {
+  flex-grow: 1;
+}
+
+mat-toolbar .user-info {
+  display: flex;
+  align-items: center;
+}
+
+mat-toolbar .name {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+/* Button styles */
+button[mat-raised-button] {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  color: var(--black-color); /* Black text color */
+  margin-left: 8px;
+  background-color: var(--accent-color); /* Dark green background */
+}
+
+button[mat-raised-button][color="accent"] {
+  background-color: var(--accent-color); /* Dark green background */
+}
+
+button[mat-raised-button][color="warn"] {
+  background-color: var(--warn-color); /* Red background for warning buttons */
+}
+
+button[mat-raised-button]:hover {
+  filter: brightness(85%);
+}
+
+button[mat-raised-button]:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}

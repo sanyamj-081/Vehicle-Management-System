@@ -1,0 +1,56 @@
+<div>
+    <h1>Work Item Management</h1>
+  
+    <!-- Add WorkItem Form -->
+    <div>
+      <h2>Add New Work Item</h2>
+      <form (ngSubmit)="addWorkItem()">
+        <label>Name:</label>
+        <input [(ngModel)]="newWorkItem.name" name="name" required>
+        
+        <label>Cost:</label>
+        <input type="number" [(ngModel)]="newWorkItem.cost" name="cost" required>
+        
+        <button type="submit">Add Work Item</button>
+      </form>
+    </div>
+  
+    <!-- Work Item List -->
+    <div>
+      <h2>Work Items</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Cost</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let workItem of workItems">
+            <td>{{ workItem.name }}</td>
+            <td>{{ workItem.cost }}</td>
+            <td>
+              <button (click)="editWorkItem(workItem)">Edit</button>
+              <button (click)="deleteWorkItem(workItem.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <!-- Edit WorkItem Form -->
+    <div *ngIf="selectedWorkItem">
+      <h2>Edit Work Item</h2>
+      <form (ngSubmit)="updateWorkItem()">
+        <label>Name:</label>
+        <input [(ngModel)]="selectedWorkItem.name" name="name" required>
+        
+        <label>Cost:</label>
+        <input type="number" [(ngModel)]="selectedWorkItem.cost" name="cost" required>
+        
+        <button type="submit">Update Work Item</button>
+      </form>
+    </div>
+  </div>
+  

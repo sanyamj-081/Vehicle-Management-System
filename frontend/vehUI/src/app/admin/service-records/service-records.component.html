@@ -1,0 +1,23 @@
+<div class="container">
+    <h3>Completed Service Records</h3>
+    <table mat-table [dataSource]="serviceRecords">
+
+        <!-- ID Column -->
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef>ID</th>
+            <td mat-cell *matCellDef="let record">{{ record.id }}</td>
+        </ng-container>
+
+        <!-- Actions Column -->
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef>Actions</th>
+            <td mat-cell *matCellDef="let record">
+                <button (click)="generateInvoice(record.id)">Create Invoice</button>
+            </td>
+        </ng-container>
+
+        <!-- Define the rows and columns -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>

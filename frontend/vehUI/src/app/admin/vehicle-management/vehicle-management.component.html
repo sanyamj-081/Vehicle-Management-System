@@ -1,0 +1,77 @@
+<div class="container">
+
+    <!-- Add New Vehicle -->
+    <div>
+      <h3>Add New Vehicle</h3>
+      <form (ngSubmit)="addVehicle()">
+        <label for="licensePlate">License Plate:</label>
+        <input id="licensePlate" [(ngModel)]="newVehicle.licensePlate" name="licensePlate" required>
+  
+        <label for="model">Model:</label>
+        <input id="model" [(ngModel)]="newVehicle.model" name="model" required>
+  
+        <label for="ownerId">Owner ID:</label>
+        <input id="ownerId" [(ngModel)]="newVehicle.ownerId" name="ownerId" required>
+  
+        <button type="submit">Add Vehicle</button>
+      </form>
+    </div>
+
+    <br>
+  
+    <!-- Vehicle List -->
+    <div>
+      <h3>Vehicle List</h3>
+      <table mat-table [dataSource]="vehicles">
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>ID</th>
+          <td mat-cell *matCellDef="let vehicle">{{ vehicle.id }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="licensePlate">
+          <th mat-header-cell *matHeaderCellDef>License Plate</th>
+          <td mat-cell *matCellDef="let vehicle">{{ vehicle.licensePlate }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="model">
+          <th mat-header-cell *matHeaderCellDef>Model</th>
+          <td mat-cell *matCellDef="let vehicle">{{ vehicle.model }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="ownerId">
+          <th mat-header-cell *matHeaderCellDef>Owner ID</th>
+          <td mat-cell *matCellDef="let vehicle">{{ vehicle.ownerId }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef>Actions</th>
+          <td mat-cell *matCellDef="let vehicle">
+            <button (click)="editVehicle(vehicle)">Edit</button>
+            <button (click)="deleteVehicle(vehicle.id)">Delete</button>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="['id', 'licensePlate', 'model', 'ownerId', 'actions']"></tr>
+        <tr mat-row *matRowDef="let row; columns: ['id', 'licensePlate', 'model', 'ownerId', 'actions']"></tr>
+      </table>
+    </div>
+  
+    <!-- Edit Vehicle Form -->
+    <div *ngIf="selectedVehicle">
+      <h3>Edit Vehicle</h3>
+      <form (ngSubmit)="updateVehicle()">
+        <label for="editLicensePlate">License Plate:</label>
+        <input id="editLicensePlate" [(ngModel)]="selectedVehicle.licensePlate" name="editLicensePlate" required>
+  
+        <label for="editModel">Model:</label>
+        <input id="editModel" [(ngModel)]="selectedVehicle.model" name="editModel" required>
+  
+        <label for="editOwnerId">Owner ID:</label>
+        <input id="editOwnerId" [(ngModel)]="selectedVehicle.ownerId" name="editOwnerId" required>
+  
+        <button type="submit">Update Vehicle</button>
+        <button (click)="selectedVehicle = null">Cancel</button>
+      </form>
+    </div>
+  </div>
+  

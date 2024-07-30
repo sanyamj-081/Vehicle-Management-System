@@ -1,0 +1,93 @@
+<div class="container">
+  <h3>Scheduled Vehicles for Servicing</h3>
+  <table mat-table [dataSource]="scheduledVehicles">
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let record">{{ record.id }}</td>
+    </ng-container>
+
+    <!-- Vehicle Model Column -->
+    <ng-container matColumnDef="model">
+      <th mat-header-cell *matHeaderCellDef>Model</th>
+      <td mat-cell *matCellDef="let record">{{ record.vehicle?.model }}</td>
+    </ng-container>
+
+    <!-- License Plate Column -->
+    <ng-container matColumnDef="licensePlate">
+      <th mat-header-cell *matHeaderCellDef>License Plate</th>
+      <td mat-cell *matCellDef="let record">{{ record.vehicle?.licensePlate }}</td>
+    </ng-container>
+
+    <!-- Service Advisor Column -->
+    <ng-container matColumnDef="serviceAdvisor">
+      <th mat-header-cell *matHeaderCellDef>Service Advisor</th>
+      <td mat-cell *matCellDef="let record">{{ record.serviceAdvisor?.firstName }} {{ record.serviceAdvisor?.lastName }}</td>
+    </ng-container>
+
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let record">
+        <button (click)="viewServiceRecord(record)">View Service Record</button>
+      </td>
+    </ng-container>
+
+    <!-- Header and Row Declarations -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <!-- Optional: Details for Selected Service Record -->
+  <div *ngIf="selectedServiceRecord">
+    <h3>Service Record Details</h3>
+    <form (ngSubmit)="addBillOfMaterial()">
+      <label for="workItem">Work Item:</label>
+      <select id="workItem" [(ngModel)]="selectedWorkItem" name="workItem" required>
+        <option *ngFor="let item of workItems" [ngValue]="item">{{ item.name }}</option>
+      </select>
+
+      <label for="quantity">Quantity:</label>
+      <input id="quantity" [(ngModel)]="quantity" name="quantity" type="number" min="1" required>
+
+      <button type="submit">Add Item</button>
+    </form>
+
+    <h4>Bill of Material</h4>
+    <table mat-table [dataSource]="selectedServiceRecord?.serviceItems">
+
+      <!-- Work Item Name Column -->
+      <ng-container matColumnDef="workItemName">
+        <th mat-header-cell *matHeaderCellDef>Work Item</th>
+        <td mat-cell *matCellDef="let item">{{ item.workItem?.name }}</td>
+      </ng-container>
+
+      <!-- Quantity Column -->
+      <ng-container matColumnDef="quantity">
+        <th mat-header-cell *matHeaderCellDef>Quantity</th>
+        <td mat-cell *matCellDef="let item">{{ item.quantity }}</td>
+      </ng-container>
+
+      <!-- Cost Column -->
+      <ng-container matColumnDef="cost">
+        <th mat-header-cell *matHeaderCellDef>Cost</th>
+        <td mat-cell *matCellDef="let item">{{ item.workItem?.cost | currency }}</td>
+      </ng-container>
+
+      <!-- Actions Column -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let item">
+          <button (click)="removeItem(item)">Remove</button>
+        </td>
+      </ng-container>
+
+      <!-- Header and Row Declarations -->
+      <tr mat-header-row *matHeaderRowDef="displayedItemColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedItemColumns;"></tr>
+    </table>
+
+    <button (click)="completeServiceRecord()">Complete Service Record</button>
+  </div>
+</div>

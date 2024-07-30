@@ -1,0 +1,13 @@
+<!-- app.component.html -->
+<mat-toolbar>
+    <span>Vehical Management System</span>
+    <span class="spacer"></span>
+    <div class="user-info">
+      <div *ngIf="loggedIn">
+        <div class="name">Hi, {{name}}</div>
+      </div>
+      <button mat-raised-button routerLink="/profile">Profile</button>
+      <button mat-raised-button (click)="logout()">LogOut</button>
+    </div>
+  </mat-toolbar>
+  

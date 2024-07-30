@@ -1,0 +1,35 @@
+<table mat-table [dataSource]="serviceRecords">
+    <!-- Vehicle ID Column -->
+    <ng-container matColumnDef="vehicleId">
+      <th mat-header-cell *matHeaderCellDef> Vehicle ID </th>
+      <td mat-cell *matCellDef="let record"> {{ record.vehicle.id }} </td>
+    </ng-container>
+  
+    <!-- Vehicle Model Column -->
+    <ng-container matColumnDef="vehicleModel">
+      <th mat-header-cell *matHeaderCellDef> Vehicle Model </th>
+      <td mat-cell *matCellDef="let record"> {{ record.vehicle.model }} </td>
+    </ng-container>
+  
+    <!-- Service Advisor Name Column -->
+    <ng-container matColumnDef="serviceAdvisor">
+      <th mat-header-cell *matHeaderCellDef> Service Advisor </th>
+      <td mat-cell *matCellDef="let record"> {{ record.serviceAdvisor.firstName }} {{ record.serviceAdvisor.lastName }} </td>
+    </ng-container>
+  
+    <!-- Status Column -->
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef> Status </th>
+      <td mat-cell *matCellDef="let record"> Under Servise </td>
+    </ng-container>
+  
+    <!-- Scheduled Date Column -->
+    <ng-container matColumnDef="scheduledDate">
+      <th mat-header-cell *matHeaderCellDef> Date </th>
+      <td mat-cell *matCellDef="let record"> {{ record.scheduledDate | date:'shortDate' }} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="['vehicleId', 'vehicleModel', 'serviceAdvisor', 'status', 'scheduledDate']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['vehicleId', 'vehicleModel', 'serviceAdvisor', 'status', 'scheduledDate']"></tr>
+  </table>
+  

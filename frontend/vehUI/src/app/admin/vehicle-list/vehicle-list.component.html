@@ -1,0 +1,44 @@
+<mat-card>
+    <mat-card-content>
+        Showing Results for {{ getVehicleCount() }} Vehicles.
+    </mat-card-content>
+</mat-card>
+
+<table mat-table [dataSource]="filteredVehicles" class="mat-elevation-z8">
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Vehicle ID </th>
+        <td mat-cell *matCellDef="let element"> {{ element.id }} </td>
+    </ng-container>
+
+    <!-- License Plate Column -->
+    <ng-container matColumnDef="licensePlate">
+        <th mat-header-cell *matHeaderCellDef> License Plate </th>
+        <td mat-cell *matCellDef="let element"> {{ element.licensePlate }} </td>
+    </ng-container>
+
+    <!-- Model Column -->
+    <ng-container matColumnDef="model">
+        <th mat-header-cell *matHeaderCellDef> Model </th>
+        <td mat-cell *matCellDef="let element"> {{ element.model }} </td>
+    </ng-container>
+
+    <!-- OwnerId Column -->
+    <ng-container matColumnDef="ownerId">
+        <th mat-header-cell *matHeaderCellDef> Owner ID </th>
+        <td mat-cell *matCellDef="let element"> {{ element.ownerId }} </td>
+    </ng-container>
+
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let element">
+            <button mat-raised-button color="accent" (click)="scheduleService(element)">
+                Schedule Service
+            </button>
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>
