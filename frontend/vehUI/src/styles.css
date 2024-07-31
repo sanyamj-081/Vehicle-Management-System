@@ -1,71 +1,57 @@
-/* Define color variables */
-:root {
-  --primary-color: #3f51b5; /* Indigo */
-  --accent-color: #4c8e4a;  /* Dark Green */
-  --warn-color: #f91302;    /* Red */
-  --light-color: #697581;
-  --black-color: #000000;
-  --dark-color: #343a40;
-  --white-color: #ffffff;
-}
+/* Global Styles */
 
-/* General styles */
+/* Body styling */
 body {
-  font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
-  background-color: var(--light-color);
-  color: var(--dark-color);
   margin: 0;
-  padding: 0;
+  font-family: 'Roboto', sans-serif; /* Ensure Roboto font is included for consistency */
+  color: #333; /* Dark grey text color for better readability */
+  background-color: #f5f5f5; /* Light background color for the application */
 }
 
-/* Toolbar styles */
+/* Basic styling for all mat-toolbar elements */
 mat-toolbar {
-  background-color: red;
-  color: black;
+  background: linear-gradient(135deg, #00796b, #004d40); /* Gradient background for a dynamic look */
+  color: #ffffff; /* White text color */
+  padding: 0 24px; /* Adequate padding */
+  height: 70px; /* Slightly shorter height for a sleeker look */
   display: flex;
   align-items: center;
-  padding: 0 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* More pronounced shadow for depth */
 }
 
-mat-toolbar .spacer {
-  flex-grow: 1;
+/* Spacer to push content to the edges */
+.spacer {
+  flex: 1;
 }
 
-mat-toolbar .user-info {
+/* Style for user info section */
+.user-info {
   display: flex;
   align-items: center;
 }
 
-mat-toolbar .name {
-  margin-right: 10px;
-  font-size: 18px;
+/* Style for user name */
+.name {
+  font-size: 16px; /* Balanced font size */
+  font-weight: 600; /* Bold text for emphasis */
+  margin-right: 20px; /* Adequate space between name and button */
+  color: #ffffff; /* White text color */
+  letter-spacing: 0.5px; /* Slight letter spacing for a clean look */
 }
 
-/* Button styles */
+/* Style for logout button */
 button[mat-raised-button] {
-  padding: 10px 15px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  color: var(--black-color); /* Black text color */
-  margin-left: 8px;
-  background-color: var(--accent-color); /* Dark green background */
+  background-color: #ff5722; /* Vibrant orange color */
+  color: #ffffff; /* White text color */
+  border-radius: 25px; /* Fully rounded corners for a modern touch */
+  font-size: 14px; /* Comfortable font size */
+  padding: 10px 20px; /* Adequate padding for easy interaction */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow for depth */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transitions for hover effects */
 }
 
-button[mat-raised-button][color="accent"] {
-  background-color: var(--accent-color); /* Dark green background */
-}
-
-button[mat-raised-button][color="warn"] {
-  background-color: var(--warn-color); /* Red background for warning buttons */
-}
-
+/* Style for logout button on hover */
 button[mat-raised-button]:hover {
-  filter: brightness(85%);
-}
-
-button[mat-raised-button]:focus {
-  outline: none;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  background-color: #e64a19; /* Slightly darker orange on hover */
+  transform: translateY(-2px); /* Lift effect on hover */
 }

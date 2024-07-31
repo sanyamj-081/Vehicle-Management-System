@@ -7,11 +7,6 @@ import { ApiService } from './common/services/api.service';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  // ngOnInit(): void {
-  //   let status = this.apiService.isLoggedIn() ? 'loggedIn' : 'loggedOff';
-  //   this.apiService.userStatus.next(status);
-  // }
-  // constructor(private apiService:ApiService){}
 
   title = 'vehUI';
 }

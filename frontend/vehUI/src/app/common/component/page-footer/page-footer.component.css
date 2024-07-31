@@ -1,9 +1,42 @@
-mat-toolbar {
-    .spacer {
-      flex: 1 1 auto;
-    }
-    .copyright {
-      display: flex;
-      align-items: center;
-    }
-  }
+/* Style for mat-toolbar with color="primary" */
+mat-toolbar[color="primary"] {
+  background: linear-gradient(135deg, #303f9f, #1e88e5); /* Gradient background with primary theme colors */
+  color: #ffffff; /* White text color */
+  padding: 0 24px; /* Adequate padding */
+  height: 60px; /* Slightly shorter height for a sleek look */
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
+}
+
+/* Spacer to push content to the edges */
+.spacer {
+  flex: 1;
+}
+
+/* Style for copyright section */
+.copyright {
+  display: flex;
+  align-items: center;
+}
+
+/* Style for copyright text */
+.copyright span {
+  font-size: 14px; /* Smaller font size for copyright text */
+  color: #ffffff; /* White text color */
+  margin-right: 12px; /* Space between text and icon */
+}
+
+/* Style for copyright button */
+button[mat-icon-button] {
+  background-color: transparent; /* No background color */
+  color: #ffffff; /* White icon color */
+  box-shadow: none; /* Remove default button shadow */
+  transition: color 0.3s, transform 0.3s; /* Smooth transitions for hover effects */
+}
+
+/* Style for copyright icon button on hover */
+button[mat-icon-button]:hover {
+  color: #ffeb3b; /* Yellow color for the icon on hover */
+  transform: scale(1.1); /* Slightly enlarge the icon on hover */
+}

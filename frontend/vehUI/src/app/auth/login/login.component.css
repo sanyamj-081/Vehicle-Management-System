@@ -1,33 +1,73 @@
-:host {
-    display: block;
-    width: 400px;
-  }
-  
-  mat-card {
-    mat-card-header {
-      display: flex;
-      justify-content: center;
-  
-      mat-card-title {
-        font-size: 2rem;
-       
-      }
-    }
-  
-    mat-form-field {
-      width: 100%;
-      padding-top: 1rem;
-    }
-  
-    mat-card-actions {
-      button {
-        margin: auto;
-        width: 80%;
-      }
-  
-      h4 {
-        margin: 0;
-        padding-right: 1rem;
-      }
-    }
-  }
+/* Style for mat-card */
+mat-card {
+  background-color: #ffffff; /* Clean white background for the card */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow for depth */
+  padding: 20px; /* Padding inside the card */
+  margin: 20px auto; /* Center card horizontally */
+  max-width: 400px; /* Limit the card width */
+  text-align: center; /* Center-align text inside the card */
+}
+
+/* Style for card header */
+mat-card-header {
+  margin-bottom: 20px; /* Space below the header */
+}
+
+mat-card-title {
+  font-size: 24px; /* Larger font size for the title */
+  font-weight: 700; /* Bold text for emphasis */
+  color: #333333; /* Dark text color */
+}
+
+/* Style for form fields */
+mat-form-field {
+  width: 100%; /* Full width for form fields */
+  margin-bottom: 20px; /* Space between fields */
+}
+
+/* Style for form field labels */
+mat-form-field mat-label {
+  color: #333333; /* Dark text color for labels */
+}
+
+/* Style for input fields */
+mat-form-field input[matInput] {
+  font-size: 16px; /* Comfortable font size */
+  padding: 12px; /* Padding inside input fields */
+  border-radius: 4px; /* Slightly rounded corners */
+}
+
+/* Style for error messages */
+mat-error {
+  color: #d32f2f; /* Red color for error messages */
+}
+
+/* Style for password visibility toggle */
+button[mat-icon-button] {
+  color: #333333; /* Dark icon color */
+}
+
+/* Style for mat-card-actions */
+mat-card-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  margin-top: 20px; /* Space above actions */
+}
+
+/* Style for action buttons */
+button[mat-raised-button] {
+  background-color: #ff5722; /* Vibrant button color */
+  color: #ffffff; /* White text color */
+  border-radius: 25px; /* Rounded corners */
+  font-size: 16px; /* Comfortable font size */
+  padding: 10px 20px; /* Padding inside the button */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+button[mat-raised-button]:hover {
+  background-color: #e64a19; /* Darker orange on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}

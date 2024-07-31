@@ -36,7 +36,7 @@ export class LoginComponent {
               if (res.userType) {
 
                   this.apiService.setLoggedIn(true, res.userType, res.userInfo);
-                  this.snackBar.open('Login succeeded,', 'Close', { duration: 3000 });
+                  this.snackBar.open('Login succeeded.', 'Close', { duration: 1000 });
                    // Navigate to home page based on user type
                   if (res.userType === 'ADMIN') {
                     this.router.navigateByUrl('/admin-home');
@@ -47,14 +47,14 @@ export class LoginComponent {
                   this.snackBar.open('Login succeeded, but user type is missing', 'Close', { duration: 3000 });
               }
           } else if (res.status === 'not found') {
-              this.snackBar.open('Invalid credentials', 'Close', { duration: 3000 });
+              this.snackBar.open('Invalid credentials.', 'Close', { duration: 1000 });
           } else {
-              this.snackBar.open('Unexpected response status', 'Close', { duration: 3000 });
+              this.snackBar.open('Unexpected response status.', 'Close', { duration: 1000 });
           }
       },
       error: (err) => {
           console.error('Login error:', err);
-          this.snackBar.open('Login failed. Please try again.', 'Close', { duration: 3000 });
+          this.snackBar.open('Login failed. Please try again.', 'Close', { duration: 1000 });
       }
   });
   

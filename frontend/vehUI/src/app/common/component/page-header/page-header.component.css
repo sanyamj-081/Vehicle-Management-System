@@ -1,14 +1,126 @@
+/* Style for mat-sidenav-container */
+.sidenav-container {
+  height: 100vh; /* Full viewport height */
+}
+
+/* Style for mat-sidenav */
+.sidenav {
+  width: 250px; /* Set width of the sidebar */
+  background:  linear-gradient(135deg, #18cbb6, #004d40);  /* Dark background color for the sidebar */
+}
+
+/* Style for mat-nav-list */
+mat-nav-list {
+  padding: 0; /* Remove default padding */
+  margin: 20px 0; /* Margin around the navigation list */
+}
+
+/* Style for mat-list-item links */
+mat-nav-list a[mat-list-item] {
+  color: #ffffff; /* White text color */
+  text-decoration: none; /* Remove underline */
+  font-size: 18px; /* Larger font size for better readability */
+  padding: 12px 20px; /* More padding for a comfortable click area */
+  border-radius: 8px; /* Slightly rounded corners for items */
+  display: flex;
+  align-items: center; /* Center items vertically */
+  transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Smooth transition effects */
+}
+
+/* Active link styling */
+.active-link {
+  background-color: #ff5722; /* Deep orange background for active item */
+  color: #ffffff; /* White text color for active item */
+  font-weight: 600; /* Bold font weight for active item */
+  transform: scale(1.02); /* Slightly enlarge active item */
+}
+
+/* Style for nav item on hover */
+mat-nav-list a[mat-list-item]:hover {
+  background-color: #f1f1f1; /* Very light grey background on hover */
+  color: #000000; /* Black text color on hover */
+  transform: translateX(5px); /* Slightly move item to the right on hover */
+}
+
+/* Style for mat-toolbar */
 mat-toolbar {
-    .spacer {
-      flex: 1 1 auto;
-    }
-  
-    .user-info {
-      display: flex;
-      align-items: center;
-  
-      button {
-        margin-left: 1.5rem;
-      }
-    }
-  }
+  background: linear-gradient(135deg, #18cbb6, #004d40); /* Gradient background for a dynamic look */
+  color: #ffffff; /* White text color */
+  padding: 0 24px; /* Adequate padding */
+  height: 70px; /* Slightly shorter height for a sleeker look */
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* More pronounced shadow for depth */
+}
+
+/* Spacer to push content to the edges */
+.spacer {
+  flex: 1;
+}
+
+/* Style for user info section */
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+/* Style for user name */
+.name {
+  font-size: 16px; /* Balanced font size */
+  font-weight: 600; /* Bold text for emphasis */
+  margin-right: 20px; /* Adequate space between name and button */
+  color: #ffffff; /* White text color */
+  letter-spacing: 0.5px; /* Slight letter spacing for a clean look */
+}
+
+/* Style for logout button */
+button[mat-raised-button] {
+  background-color: #ff5722; /* Vibrant orange color */
+  color: #ffffff; /* White text color */
+  border-radius: 25px; /* Fully rounded corners for a modern touch */
+  font-size: 14px; /* Comfortable font size */
+  padding: 10px 20px; /* Adequate padding for easy interaction */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow for depth */
+  transition: background-color 0.1s, transform 0.1s; /* Smooth transitions for hover effects */
+}
+
+/* Style for logout button on hover */
+button[mat-raised-button]:hover {
+  background-color: #e64a19; /* Slightly darker orange on hover */
+  transform: translateY(-2px); /* Lift effect on hover */
+}
+
+/* Style for main content area */
+mat-sidenav-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #f5f5f5; /* Light background for the main content */
+  padding: 16px; /* Padding around the content */
+}
+
+/* Style for mat-card */
+mat-card {
+  background-color: #ffffff; /* Clean white background for the card */
+  border-radius: 12px; /* Slightly more rounded corners */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* More pronounced shadow for depth */
+  padding: 20px; /* Adequate padding inside the card */
+  margin: 20px auto; /* Center card horizontally with margin */
+  max-width: 700px; /* Increase max width for a larger card */
+  text-align: center; /* Center-align text inside the card */
+  border: 1px solid #e0e0e0; /* Light border for subtle definition */
+}
+
+/* Style for card content */
+mat-card-content {
+  padding: 0; /* Remove default padding inside content */
+}
+
+/* Style for card heading */
+mat-card h1 {
+  font-size: 32px; /* Larger font size for more impact */
+  font-weight: 700; /* Extra bold text for emphasis */
+  color: #212121; /* Darker text color for better readability */
+  margin: 0; /* Remove default margin */
+  letter-spacing: 1px; /* Slight letter spacing for a modern look */
+}

@@ -9,6 +9,7 @@ import { User, UserType, AccountStatus } from '../../models/model';
 })
 export class SAManagementComponent implements OnInit {
   serviceAdvisors: User[] = [];
+  AccountStatus= AccountStatus;
   newServiceAdvisor: User = {
     id: 0,
     firstName: '',
@@ -23,7 +24,8 @@ export class SAManagementComponent implements OnInit {
   selectedServiceAdvisor: User | null = null;
 
   displayedColumns: string[] = ['id', 'firstName', 'lastName', 'email', 'mobileNumber', 'accountStatus', 'actions'];
-  accountStatuses: string[] = Object.values(AccountStatus).filter(value => typeof value === 'string') as string[];
+  accountStatuses: number[] = Object.values(AccountStatus).filter(value => typeof value === 'string') as unknown as number[];
+
 
   constructor(private apiService: ApiService) {}
 
@@ -43,8 +45,10 @@ export class SAManagementComponent implements OnInit {
   }
 
   addServiceAdvisor(): void {
+    console.log('Account Status :', this.newServiceAdvisor);
     this.apiService.createServiceAdvisor(this.newServiceAdvisor).subscribe(
       (advisor: User) => {
+        console.log('Account Status (before update):', this.newServiceAdvisor);
         this.serviceAdvisors.push(advisor);
         this.loadServiceAdvisors();
         this.resetForm();
@@ -60,13 +64,12 @@ export class SAManagementComponent implements OnInit {
   }
 
   updateServiceAdvisor(): void {
+     
     if (this.selectedServiceAdvisor) {
       this.apiService.updateServiceAdvisor(this.selectedServiceAdvisor.id, this.selectedServiceAdvisor).subscribe(
         () => {
-          const index = this.serviceAdvisors.findIndex(advisor => advisor.id === this.selectedServiceAdvisor!.id);
-          if (index !== -1) {
-            this.serviceAdvisors[index] = this.selectedServiceAdvisor!;
-          }
+          
+          this.loadServiceAdvisors();
           this.selectedServiceAdvisor = null;
         },
         error => {

@@ -1,37 +1,47 @@
 <div class="container">
 
   <!-- Add New Service Advisor -->
-  <div>
+  <div class="form-container">
     <h3>Add New Service Advisor</h3>
     <form (ngSubmit)="addServiceAdvisor()">
-      <label for="firstName">First Name:</label>
-      <input id="firstName" [(ngModel)]="newServiceAdvisor.firstName" name="firstName" required>
-
-      <label for="lastName">Last Name:</label>
-      <input id="lastName" [(ngModel)]="newServiceAdvisor.lastName" name="lastName" required>
-
-      <label for="email">Email:</label>
-      <input id="email" [(ngModel)]="newServiceAdvisor.email" name="email" required>
-
-      <label for="password">Password:</label>
-      <input id="password" [(ngModel)]="newServiceAdvisor.password" name="password" required type="password">
-
-      <label for="mobileNumber">Mobile Number:</label>
-      <input id="mobileNumber" [(ngModel)]="newServiceAdvisor.mobileNumber" name="mobileNumber" required>
-
-      <label for="accountStatus">Account Status:</label>
-      <select id="accountStatus" [(ngModel)]="newServiceAdvisor.accountStatus" name="accountStatus" required>
-        <option *ngFor="let status of accountStatuses" [value]="status">{{ status }}</option>
-      </select>
-
+      <div class="form-row">
+        <div class="form-group">
+          <label for="firstName">First Name:</label>
+          <input id="firstName" [(ngModel)]="newServiceAdvisor.firstName" name="firstName" required>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name:</label>
+          <input id="lastName" [(ngModel)]="newServiceAdvisor.lastName" name="lastName" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input id="email" [(ngModel)]="newServiceAdvisor.email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input id="password" [(ngModel)]="newServiceAdvisor.password" name="password" required type="password">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="mobileNumber">Mobile Number:</label>
+          <input id="mobileNumber" [(ngModel)]="newServiceAdvisor.mobileNumber" name="mobileNumber" required>
+        </div>
+        <div class="form-group">
+          <label for="accountStatus">Account Status:</label>
+          <select id="accountStatus" [(ngModel)]="newServiceAdvisor.accountStatus" name="accountStatus" required>
+            <option *ngFor="let status of accountStatuses" [value]="status">{{ status }}</option>
+          </select>
+        </div>
+      </div>
       <button type="submit">Add Service Advisor</button>
     </form>
   </div>
 
-  <br>
-
-  <!-- Service Advisor List -->
-  <div>
+   <!-- Service Advisor List -->
+   <div>
     <h3>Service Advisor List</h3>
     <table mat-table [dataSource]="serviceAdvisors">
       <ng-container matColumnDef="id">
@@ -78,28 +88,42 @@
   </div>
 
   <!-- Edit Service Advisor Form -->
-  <div *ngIf="selectedServiceAdvisor">
+  <div *ngIf="selectedServiceAdvisor" class="form-container">
     <h3>Edit Service Advisor</h3>
     <form (ngSubmit)="updateServiceAdvisor()">
-      <label for="editFirstName">First Name:</label>
-      <input id="editFirstName" [(ngModel)]="selectedServiceAdvisor.firstName" name="editFirstName" required>
-
-      <label for="editLastName">Last Name:</label>
-      <input id="editLastName" [(ngModel)]="selectedServiceAdvisor.lastName" name="editLastName" required>
-
-      <label for="editEmail">Email:</label>
-      <input id="editEmail" [(ngModel)]="selectedServiceAdvisor.email" name="editEmail" required>
-
-      <label for="editMobileNumber">Mobile Number:</label>
-      <input id="editMobileNumber" [(ngModel)]="selectedServiceAdvisor.mobileNumber" name="editMobileNumber" required>
-
-      <label for="editAccountStatus">Account Status:</label>
-      <select id="editAccountStatus" [(ngModel)]="selectedServiceAdvisor.accountStatus" name="editAccountStatus" required>
-        <option *ngFor="let status of accountStatuses" [value]="status">{{ status }}</option>
-      </select>
-
+      <div class="form-row">
+        <div class="form-group">
+          <label for="editFirstName">First Name:</label>
+          <input id="editFirstName" [(ngModel)]="selectedServiceAdvisor.firstName" name="editFirstName" required>
+        </div>
+        <div class="form-group">
+          <label for="editLastName">Last Name:</label>
+          <input id="editLastName" [(ngModel)]="selectedServiceAdvisor.lastName" name="editLastName" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="editEmail">Email:</label>
+          <input id="editEmail" [(ngModel)]="selectedServiceAdvisor.email" name="editEmail" required>
+        </div>
+        <div class="form-group">
+          <label for="editMobileNumber">Mobile Number:</label>
+          <input id="editMobileNumber" [(ngModel)]="selectedServiceAdvisor.mobileNumber" name="editMobileNumber" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="editAccountStatus">Account Status:</label>
+          <select id="editAccountStatus" [(ngModel)]="selectedServiceAdvisor.accountStatus" name="editAccountStatus" required>
+            <option *ngFor="let status of accountStatuses" [value]="status">{{ status }}</option>
+          </select>
+        </div>
+      </div>
       <button type="submit">Update Service Advisor</button>
       <button (click)="selectedServiceAdvisor = null" type="button">Cancel</button>
     </form>
   </div>
+
+ 
+
 </div>

@@ -1,13 +1,30 @@
-<!-- app.component.html -->
-<mat-toolbar>
-    <span>Vehical Management System</span>
-    <span class="spacer"></span>
-    <div class="user-info">
-      <div *ngIf="loggedIn">
-        <div class="name">Hi, {{name}}</div>
+<mat-sidenav-container class="sidenav-container">
+  <!-- Sidenav (Sidebar) -->
+  <mat-sidenav #sidenav mode="side" class="sidenav">
+    <mat-nav-list>
+  <a mat-list-item *ngFor="let item of navItems; trackBy: trackByFunction" [routerLink]="item.link" routerLinkActive="active-link">
+    {{ item.value }}
+  </a>
+</mat-nav-list>
+  </mat-sidenav>
+
+  <!-- Main content area -->
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Prime Automobiles Pvt. Ltd.</span>
+      <span class="spacer"></span>
+      <div class="user-info">
+        <div *ngIf="loggedIn">
+          <div class="name">Hi, {{name}} !!!</div>
+        </div>
+        <button mat-raised-button (click)="logout()">LogOut</button>
       </div>
-      <button mat-raised-button routerLink="/profile">Profile</button>
-      <button mat-raised-button (click)="logout()">LogOut</button>
-    </div>
-  </mat-toolbar>
-  
+    </mat-toolbar>
+
+    <!-- Main content will go here -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
