@@ -31,10 +31,6 @@ namespace Vehicle_Backend.Controllers
             return Ok(serviceRecords);
         }
 
-/*
- for commit purpose
- */
-
         [HttpGet("ServiceRecord/{id}")]
         public async Task<ActionResult> GetServiceRecord(int id)
         {
@@ -66,61 +62,31 @@ namespace Vehicle_Backend.Controllers
         [HttpPost("AddServiceItem")]
         public async Task<IActionResult> AddServiceItem([FromBody] ServiceItemDto serviceItemDto)
         {
-            if (serviceItemDto == null)
-            {
-                return BadRequest("ServiceItemDto cannot be null.");
-            }
-
-            if (serviceItemDto.Quantity <= 0)
-            {
-                return BadRequest("Quantity must be greater than zero.");
-            }
-
-            // Ensure WorkItem exists
             var workItem = await _context.WorkItems.FindAsync(serviceItemDto.WorkItemId);
             if (workItem == null)
             {
-                return NotFound($"WorkItem with ID {serviceItemDto.WorkItemId} not found.");
+                return NotFound("WorkItem not found");
             }
 
-            // Ensure ServiceRecord exists (Optional, if needed)
             var serviceRecord = await _context.ServiceRecords.FindAsync(serviceItemDto.ServiceRecordId);
             if (serviceRecord == null)
             {
-                return NotFound($"ServiceRecord with ID {serviceItemDto.ServiceRecordId} not found.");
+                return NotFound("ServiceRecord not found");
             }
 
-            // Create and add the new ServiceItem
             var serviceItem = new ServiceItem
             {
                 ServiceRecordId = serviceItemDto.ServiceRecordId,
                 WorkItemId = serviceItemDto.WorkItemId,
-                Quantity = serviceItemDto.Quantity
+                Quantity = serviceItemDto.Quantity,
+                WorkItem = workItem
             };
 
-            try
-            {
-                _context.ServiceItems.Add(serviceItem);
-                await _context.SaveChangesAsync();
-            }
-            catch (Exception ex)
-            {
-                // Log the exception (consider using a logging framework)
-                Console.Error.WriteLine($"Error saving ServiceItem: {ex.Message}");
-                return StatusCode(500, "An error occurred while saving the service item.");
-            }
+            _context.ServiceItems.Add(serviceItem);
+            await _context.SaveChangesAsync();
 
-            return Ok();
+            return Ok(serviceItem);
         }
-
-        public class ServiceItemDto
-        {
-            public int ServiceRecordId { get; set; }
-            public int WorkItemId { get; set; }
-            public int Quantity { get; set; }
-        }
-
-
 
         [HttpPost("CompleteServiceRecord/{id}")]
         public async Task<IActionResult> CompleteServiceRecord(int id)
@@ -136,5 +102,12 @@ namespace Vehicle_Backend.Controllers
 
             return Ok();
         }
+    }
+
+    public class ServiceItemDto
+    {
+        public int ServiceRecordId { get; set; }
+        public int WorkItemId { get; set; }
+        public int Quantity { get; set; }
     }
 }

@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Controllers"
+    "\\Controllers",
+    "\\Migrations",
+    "\\Models"
   ],
-  "SelectedNode": "\\Controllers\\ServiceAdvisorController.cs",
   "PreviewInSolutionExplorer": false
 }

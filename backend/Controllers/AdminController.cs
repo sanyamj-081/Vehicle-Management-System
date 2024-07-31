@@ -132,11 +132,7 @@ namespace Vehicle_Backend.Controllers
             return Ok(invoiceDetails);
         }
 
-
-
-
-
-
+/*
         [HttpPost("ProcessPayment")]
         public async Task<IActionResult> ProcessPayment([FromQuery] int serviceRecordId)
         {
@@ -159,7 +155,7 @@ namespace Vehicle_Backend.Controllers
             await _context.SaveChangesAsync();
 
             return Ok(new { Message = "Service record dispatched successfully" });
-        }
+        }*/
 
 
 
@@ -228,13 +224,13 @@ namespace Vehicle_Backend.Controllers
         }
 
         // PUT: api/ServiceAdvisor/{id}
-        [HttpPut("SA/{id}")]
+        [HttpPut("UpdateSA/{id}")]
         public async Task<IActionResult> UpdateServiceAdvisor(int id, [FromBody] User advisor)
         {
             if (id != advisor.Id)
                 return BadRequest();
 
-            var existingAdvisor = await _context.Users.FindAsync(id);
+            /*var existingAdvisor = await _context.Users.FindAsync(id);
             if (existingAdvisor == null || existingAdvisor.UserType != UserType.SERVICE_ADVISOR)
                 return NotFound();
 
@@ -245,7 +241,14 @@ namespace Vehicle_Backend.Controllers
             existingAdvisor.MobileNumber = advisor.MobileNumber;
             existingAdvisor.AccountStatus = advisor.AccountStatus;
 
-            _context.Entry(existingAdvisor).State = EntityState.Modified;
+            _context.Entry(existingAdvisor).State = EntityState.Modified;*/
+
+            advisor.CreatedOn = DateTime.UtcNow;
+            advisor.AccountStatus = advisor.AccountStatus; 
+
+
+            _context.Entry(advisor).State = EntityState.Modified;
+
             await _context.SaveChangesAsync();
 
             return NoContent();

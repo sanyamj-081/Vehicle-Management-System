@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Vehicle Backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c123615ce9d5d3591962e1ee20b9ebc1e70c61c8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+37ddfb1d56a6089fa278625b03a670b9a397702b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Vehicle Backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Vehicle Backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

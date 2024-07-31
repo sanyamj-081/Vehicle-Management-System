@@ -4528,11 +4528,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Visual Studio Projects\\Vehicle Backend\\Vehicle Backend.csproj",
+      "projectUniqueName": "D:\\Vehicle-Management-System\\backend\\Vehicle Backend.csproj",
       "projectName": "Vehicle Backend",
-      "projectPath": "D:\\Visual Studio Projects\\Vehicle Backend\\Vehicle Backend.csproj",
+      "projectPath": "D:\\Vehicle-Management-System\\backend\\Vehicle Backend.csproj",
       "packagesPath": "C:\\Users\\Sanyam\\.nuget\\packages\\",
-      "outputPath": "D:\\Visual Studio Projects\\Vehicle Backend\\obj\\",
+      "outputPath": "D:\\Vehicle-Management-System\\backend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Sanyam\\AppData\\Roaming\\NuGet\\NuGet.Config",
