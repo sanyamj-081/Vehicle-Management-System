@@ -228,12 +228,17 @@ namespace Vehicle_Backend.Controllers
         public async Task<IActionResult> UpdateServiceAdvisor(int id, [FromBody] User advisor)
         {
             if (id != advisor.Id)
-                return BadRequest();
+                return BadRequest("The advisor ID in the request body does not match the ID in the route.");
 
-            /*var existingAdvisor = await _context.Users.FindAsync(id);
+            // Validate the model
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var existingAdvisor = await _context.Users.FindAsync(id);
             if (existingAdvisor == null || existingAdvisor.UserType != UserType.SERVICE_ADVISOR)
-                return NotFound();
+                return NotFound("Service Advisor not found.");
 
+            // Update fields
             existingAdvisor.FirstName = advisor.FirstName;
             existingAdvisor.LastName = advisor.LastName;
             existingAdvisor.Email = advisor.Email;
@@ -241,18 +246,27 @@ namespace Vehicle_Backend.Controllers
             existingAdvisor.MobileNumber = advisor.MobileNumber;
             existingAdvisor.AccountStatus = advisor.AccountStatus;
 
-            _context.Entry(existingAdvisor).State = EntityState.Modified;*/
-
-            advisor.CreatedOn = DateTime.UtcNow;
-            advisor.AccountStatus = advisor.AccountStatus; 
-
-
-            _context.Entry(advisor).State = EntityState.Modified;
-
-            await _context.SaveChangesAsync();
+            try
+            {
+                _context.Entry(existingAdvisor).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!_context.Users.Any(e => e.Id == id))
+                {
+                    return NotFound("Service Advisor no longer exists.");
+                }
+                else
+                {
+                    throw;
+                }
+            }
 
             return NoContent();
         }
+
+
 
         [HttpDelete("SA/{id}")]
         public async Task<IActionResult> DeleteServiceAdvisor(int id)
