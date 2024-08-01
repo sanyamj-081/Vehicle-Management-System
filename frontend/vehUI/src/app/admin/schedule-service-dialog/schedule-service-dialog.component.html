@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Schedule Service</h1>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Service Advisor Name</mat-label>
+    <input matInput [(ngModel)]="serviceAdvisorId">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button (click)="onSchedule()">Schedule</button>
+</div>

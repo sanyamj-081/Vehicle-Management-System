@@ -51,8 +51,7 @@ button[mat-icon-button] {
 /* Style for mat-card-actions */
 mat-card-actions {
   display: flex;
-  flex-direction: column;
-  align-items: center; /* Center items horizontally */
+  justify-content: space-between; /* Space between buttons */
   margin-top: 20px; /* Space above actions */
 }
 
@@ -65,6 +64,7 @@ button[mat-raised-button] {
   padding: 10px 20px; /* Padding inside the button */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
   transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+  justify-content: center;
 }
 
 button[mat-raised-button]:hover {

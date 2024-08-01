@@ -1,39 +1,14 @@
-/* Style for 404 error page */
-.error-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh; /* Full viewport height */
-    background: linear-gradient(135deg, #f44336, #d32f2f); /* Gradient background with vibrant red tones */
-    color: #ffffff; /* White text color */
-    text-align: center;
-    font-family: 'Roboto', sans-serif; /* Consistent font */
-  }
-  
-  .error-page p {
-    font-size: 24px; /* Larger font size for prominence */
-    font-weight: 500; /* Semi-bold text for emphasis */
-    margin: 0;
-  }
-  
-  .error-page h1 {
-    font-size: 80px; /* Large font size for main error code */
-    font-weight: 700; /* Bold text for emphasis */
-    margin: 0;
-    color: #ffffff; /* White text color */
-  }
-  
-  /* Style for a link or button (optional) */
-  .error-page a {
-    margin-top: 20px;
-    font-size: 18px;
-    color: #ffffff;
-    text-decoration: underline;
-    transition: color 0.3s; /* Smooth transition for hover effects */
-  }
-  
-  .error-page a:hover {
-    color: #ffeb3b; /* Yellow color on hover */
-  }
-  
+.welcome-message {
+  font-size: 5rem; /* Very large font size */
+  font-weight: bold;
+  color: #333333; /* Dark text color */
+  text-align: center;
+  max-width: 90%; /* Responsive max width */
+  padding: 20px;
+  margin: 0 auto; /* Center horizontally */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh; /* Full viewport height */
+  background-color: #f4f4f4; /* Light background color */
+}

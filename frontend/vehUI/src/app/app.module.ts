@@ -24,6 +24,11 @@ import { SAManagementComponent } from './admin/s-a-management/s-a-management.com
 import { WorkItemManagementComponent } from './admin/work-item-management/work-item-management.component';
 import { DialogContentExampleDialog, ServiceRecordsComponent } from './admin/service-records/service-records.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import {  MatLabel } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ScheduleServiceDialogComponent } from './admin/schedule-service-dialog/schedule-service-dialog.component';
+import { RegisterComponent } from './auth/register/register.component';
 
 
 @NgModule({
@@ -43,7 +48,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     SAManagementComponent,
     WorkItemManagementComponent,
     ServiceRecordsComponent,
-    DialogContentExampleDialog
+    DialogContentExampleDialog,
+    ScheduleServiceDialogComponent,
+    RegisterComponent,
     
   ],
   imports: [
@@ -54,7 +61,10 @@ import { MatDialogModule } from '@angular/material/dialog';
     FormsModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatLabel
    
   ],
   providers: [

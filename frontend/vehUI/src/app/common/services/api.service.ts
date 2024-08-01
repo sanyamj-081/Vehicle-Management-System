@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { AccountStatus, ServiceItem, ServiceRecord, User, UserType, Vehicle, WorkItem } from '../../models/model';
+import { AccountStatus, ServiceItem, ServiceRecord, ServiceStatus, User, UserType, Vehicle, WorkItem } from '../../models/model';
 
 @Injectable({
   providedIn: 'root'
@@ -61,6 +61,11 @@ export class ApiService {
     return this.userStatus.asObservable();
   }
 
+  register(user: any): Observable<string> {
+    user.userType = UserType.SERVICE_ADVISOR; 
+    return this.http.post<string>(`${this.API_BASE_URL}/auth/register`, user);
+  }
+
 
   // ===========================================================================================
   //                 VEHICLE STATUS OPEARTIONS
@@ -81,6 +86,26 @@ export class ApiService {
   getVehiclesServiced(): Observable<ServiceRecord[]> {
     const url = `${this.API_BASE_URL}/admin/VehiclesServiced`;
     return this.http.get<ServiceRecord[]>(url);
+  }
+  getVehicles(): Observable<Vehicle[]> {
+    const url = `${this.API_BASE_URL}/admin/GetVehicles`;
+    return this.http.get<Vehicle[]>(url);
+  }
+
+  scheduleService(vehicleId: number, serviceAdvisorId: number): Observable<any> {
+    const params = new HttpParams()
+      .set('vehicleId', vehicleId.toString())
+      .set('serviceAdvisorId', serviceAdvisorId.toString());
+
+    return this.http.post<any>(`${this.API_BASE_URL}/admin/ScheduleService`, null, { params });
+  }
+
+  updateServiceStatus(serviceRecordId: number, status: ServiceStatus): Observable<any> {
+    const params = new HttpParams()
+      .set('serviceRecordId', serviceRecordId.toString())
+      .set('status', status.toString());
+
+    return this.http.post<any>(`${this.API_BASE_URL}/admin/UpdateServiceStatus`, null, { params });
   }
 
   // ===========================================================================================
@@ -113,15 +138,17 @@ export class ApiService {
     });
   }   
 
-  getServiceRecords(): Observable<ServiceRecord[]> {
-    const url = `${this.API_BASE_URL}/admin/GetServiceRecords`;
-    return this.http.get<ServiceRecord[]>(url);
-  }  
+   
 
 
   // ===============================================
   //                 INVOICE CREATE
   // ===============================================
+
+  getServiceRecords(): Observable<ServiceRecord[]> {
+    const url = `${this.API_BASE_URL}/admin/GetServiceRecords`;
+    return this.http.get<ServiceRecord[]>(url);
+  } 
 
   createInvoice(serviceRecordId: number): Observable<any> {
     const url = `${this.API_BASE_URL}/admin/CreateInvoice`;
@@ -137,10 +164,7 @@ export class ApiService {
   // ===============================================
 
 
-  getVehicles(): Observable<Vehicle[]> {
-      const url = `${this.API_BASE_URL}/admin/GetVehicles`;
-      return this.http.get<Vehicle[]>(url);
-  }
+ 
 
   createVehicle(vehicle: Vehicle): Observable<Vehicle> {
       const url = `${this.API_BASE_URL}/admin/CreateVehicles`;

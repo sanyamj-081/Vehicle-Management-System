@@ -10,10 +10,12 @@ import { VehicleManagementComponent } from './admin/vehicle-management/vehicle-m
 import { SAManagementComponent } from './admin/s-a-management/s-a-management.component';
 import { WorkItemManagementComponent } from './admin/work-item-management/work-item-management.component';
 import { ServiceRecordsComponent } from './admin/service-records/service-records.component';
+import { RegisterComponent } from './auth/register/register.component';
 
 const routes: Routes = [
   //{path:'register',component:RegisterComponent},
   {path:'login', component:LoginComponent},
+  {path:'register', component:RegisterComponent},
   {path: 'all-vehicles',component:VehicleListComponent},  
   {path:'under-servicing',component:UnderServisingComponent},
   {path:'serviced-vehicles',component: ServisedComponent},
@@ -23,7 +25,7 @@ const routes: Routes = [
   {path: 'reports', component:ServiceRecordsComponent},
 
   {path:'service-records',component:ScheduledVehicleComponent},
- // {path:'**',component:PageNotFoundComponent},
+  {path:'**',component:PageNotFoundComponent},
 ];
 
 @NgModule({
