@@ -36,7 +36,7 @@ This project is an end-to-end multi-tiered web-based solution for managing vehic
 3. **Service Completion:**
    - Print invoice, process payment, and dispatch after service completion.
 4. **Master Data Management:**
-   - Create, update, delete, and search for Vehicles, Customers, Service Representatives, and Work Items (e.g., Engine Oil, Fuel Filter, Service Charges).
+   - Create, update, delete, and search for Vehicles, Service Representatives, and Work Items (e.g., Engine Oil, Fuel Filter, Service Charges).
 
 ### Service Advisor Functionality
 1. **Dashboard:**
@@ -48,12 +48,7 @@ This project is an end-to-end multi-tiered web-based solution for managing vehic
 ## Deliverables
 - Implementation of all functionalities as per the business requirements and scope.
 - Complete application source code on GitHub.
-- Deployed and working application hosted on a cloud environment.
-- Unit tests and automated functional tests for all functionalities.
-- Use of continuous integration toolchain (optional).
-- Hosting on an Azure cloud platform (optional).
 - Validation for all input fields based on business rules.
-- Implementation of appropriate security features (secure coding, authentication/authorization).
 - Appropriate exception handlers.
 
 
