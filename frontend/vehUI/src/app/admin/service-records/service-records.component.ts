@@ -90,17 +90,17 @@ export class ServiceRecordsComponent implements OnInit {
         </ng-container>
         <ng-container matColumnDef="cost">
           <th mat-header-cell *matHeaderCellDef> Cost </th>
-          <td mat-cell *matCellDef="let item"> {{ item.workItem?.cost | currency }} </td>
+          <td mat-cell *matCellDef="let item"> {{ item.workItem?.cost }} </td>
         </ng-container>
         <ng-container matColumnDef="totalCost">
           <th mat-header-cell *matHeaderCellDef> Total Cost </th>
-          <td mat-cell *matCellDef="let item"> {{ (item.quantity * (item.workItem?.cost || 0)) | currency }} </td>
+          <td mat-cell *matCellDef="let item"> {{ (item.quantity * (item.workItem?.cost || 0)) }} </td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
-      <p><strong>Total Cost:</strong> {{ data?.totalCost | currency }}</p>
+      <p><strong>Total Cost:</strong> {{ data?.totalCost  }}</p>
     </div>
     <div mat-dialog-actions>
       <button mat-button (click)="onClose()">Close</button>

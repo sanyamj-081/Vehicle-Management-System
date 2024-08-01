@@ -173,15 +173,16 @@ export class ApiService {
   createServiceAdvisor(advisor: User): Observable<User> {
     const url = `${this.API_BASE_URL}/admin/CreateSA`;
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    advisor.accountStatus = AccountStatus.UNAPPROVED; // assuming UNAPPROVED = 0
-    advisor.userType = UserType.SERVICE_ADVISOR; // as
+    advisor.accountStatus = AccountStatus.UNAPPROVED; 
+    advisor.userType = UserType.SERVICE_ADVISOR; 
     console.log(advisor);
     return this.http.post<User>(url, advisor, { headers });
   }
 
   updateServiceAdvisor(id: number, advisor: User): Observable<void> {
-    const url = `${this.API_BASE_URL}/admin/SA/${id}`;
+    const url = `${this.API_BASE_URL}/admin/UpdateSA/${id}`;
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    advisor.accountStatus = AccountStatus.APPROVED;
     return this.http.put<void>(url, advisor, { headers });
   }
 

@@ -23,7 +23,7 @@ const routes: Routes = [
   {path: 'reports', component:ServiceRecordsComponent},
 
   {path:'service-records',component:ScheduledVehicleComponent},
-  {path:'**',component:PageNotFoundComponent},
+ // {path:'**',component:PageNotFoundComponent},
 ];
 
 @NgModule({

@@ -31,13 +31,7 @@ export class PageHeaderComponent {
         }
       },
     });
-  }
-  // logout() {
-  //   // Add your logout logic here
-  //   this.apiService.logout();
-  // }
-
-  
+  }  
 
   ngOnInit(): void {
     // Subscribe to user status changes
@@ -66,7 +60,6 @@ export class PageHeaderComponent {
         { value: 'Under Servicing', link: '/under-servicing' },
         { value: 'Serviced Vehicles', link: '/serviced-vehicles' },
         { value: 'Manage Vehicles', link: '/manage-vehicles' },
-        { value: 'Manage Customers', link: '/manage-customers' },
         { value: 'Manage Service Representatives', link: '/manage-s-a' },
         { value: 'Manage Work Items', link: '/manage-work-items' },
         { value: 'Reports', link: '/reports' }
@@ -76,7 +69,6 @@ export class PageHeaderComponent {
       this.panelName = 'Service Advisor Panel';
       this.navItems = [
         { value: 'Scheduled Vehicles', link: '/service-records' },
-        { value: 'Reports', link: '/report' }
       ];
       this.router.navigateByUrl('/service-advisor-home');
     } else {
