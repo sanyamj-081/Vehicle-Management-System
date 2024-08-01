@@ -31,7 +31,10 @@ namespace Vehicle_Backend.Controllers
                 .Include(sr => sr.ServiceAdvisor)
                 .ToListAsync();
 
+           
+
             return Ok(records);
+
         }
 
         // Get vehicles that have been serviced
@@ -42,21 +45,56 @@ namespace Vehicle_Backend.Controllers
                 .Where(sr => sr.Status == ServiceStatus.COMPLETED)
                 .Include(sr => sr.Vehicle)
                 .Include(sr => sr.ServiceAdvisor)
+                .Distinct()
+                .ToListAsync();
+            /*var vehicles = await _context.Vehicles
+               .Where(v => records.Contains(v.Id))
+               .ToListAsync();
+*/
+            return Ok(records); 
+        }
+
+        [HttpGet("VehiclesDueForServicing")]
+        public async Task<IActionResult> VehiclesDueForServicing()
+        {
+            // Fetch Service Records with status DUE
+            var dueServiceRecords = await _context.ServiceRecords
+                .Where(sr => sr.Status == ServiceStatus.DUE)
+                .Select(sr => sr.VehicleId)
+                .Distinct()
+                .ToListAsync();
+          
+            var vehicles = await _context.Vehicles
+                .Where(v => dueServiceRecords.Contains(v.Id))
                 .ToListAsync();
 
-            return Ok(records); // Ensure ServiceRecord includes Vehicle and ServiceAdvisor
+            return Ok(vehicles);
         }
+
+
+        [HttpGet("GetVehicles")]
+        public async Task<IActionResult> GetVehicles()
+        {
+            return Ok(await _context.Vehicles.ToListAsync());
+
+        }
+
+
+
+
+
+
+
+
 
         [HttpPost("ScheduleService")]
         public async Task<IActionResult> ScheduleService([FromQuery] int vehicleId, [FromQuery] int serviceAdvisorId)
         {
-            // Basic validation
             if (vehicleId <= 0 || serviceAdvisorId <= 0)
             {
                 return BadRequest("Invalid vehicle or service advisor ID.");
             }
 
-            // Create new ServiceRecord
             var serviceRecord = new ServiceRecord
             {
                 VehicleId = vehicleId,
@@ -67,17 +105,50 @@ namespace Vehicle_Backend.Controllers
 
             try
             {
-                // Add to database and save changes
                 _context.ServiceRecords.Add(serviceRecord);
                 await _context.SaveChangesAsync();
                 return Ok(serviceRecord);
             }
             catch (Exception ex)
             {
-                // Log exception (not implemented here) and return error response
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
+
+        [HttpPost("UpdateServiceStatus")]
+        public async Task<IActionResult> UpdateServiceStatus([FromQuery] int serviceRecordId, [FromQuery] ServiceStatus status)
+        {
+            var serviceRecord = await _context.ServiceRecords.FindAsync(serviceRecordId);
+            if (serviceRecord == null)
+            {
+                return NotFound("Service record not found.");
+            }
+
+            serviceRecord.Status = status;
+            if (status == ServiceStatus.COMPLETED)
+            {
+                serviceRecord.CompletedDate = DateTime.Now;
+            }
+
+            _context.ServiceRecords.Update(serviceRecord);
+
+            try
+            {
+                await _context.SaveChangesAsync();
+                return Ok(serviceRecord);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+
+
+
+
+
+
+
 
         // Create an invoice for a completed service
 
@@ -118,13 +189,17 @@ namespace Vehicle_Backend.Controllers
             var invoiceDetails = new
             {
                 ServiceRecordId = serviceRecord.Id,
-                ServiceAdvisorName = serviceRecord.ServiceAdvisor.FirstName + serviceRecord.ServiceAdvisor.LastName, // Assuming ServiceAdvisor has a Name property
+                ServiceAdvisorName = serviceRecord.ServiceAdvisor.FirstName + " " + serviceRecord.ServiceAdvisor.LastName,
                 ServiceItems = serviceItems.Select(si => new
                 {
-                    WorkItemName = si.WorkItem.Name,
+                    WorkItem = new
+                    {
+                        si.WorkItem.Name,
+                        si.WorkItem.Cost
+                    },
                     Quantity = si.Quantity,
                     Cost = si.WorkItem.Cost,
-                    TotalCost = si.Quantity * si.WorkItem.Cost
+                   TotalCost = si.Quantity * si.WorkItem.Cost
                 }),
                 TotalCost = totalCost
             };
@@ -132,39 +207,15 @@ namespace Vehicle_Backend.Controllers
             return Ok(invoiceDetails);
         }
 
-/*
-        [HttpPost("ProcessPayment")]
-        public async Task<IActionResult> ProcessPayment([FromQuery] int serviceRecordId)
-        {
-            var serviceRecord = await _context.ServiceRecords.FindAsync(serviceRecordId);
-            if (serviceRecord == null) return NotFound();
 
-            // Logic to process payment here
-            // Example: Update payment status, etc.
 
-            return Ok(new { Message = "Payment processed successfully" });
-        }
-
-        [HttpPost("DispatchServiceRecord")]
-        public async Task<IActionResult> DispatchServiceRecord([FromQuery] int serviceRecordId)
-        {
-            var serviceRecord = await _context.ServiceRecords.FindAsync(serviceRecordId);
-            if (serviceRecord == null) return NotFound();
-
-            serviceRecord.Status = ServiceStatus.COMPLETED; // Ensure this status is defined
-            await _context.SaveChangesAsync();
-
-            return Ok(new { Message = "Service record dispatched successfully" });
-        }*/
+        // ===============================================
+        //                 CRUD - VEHICLES
+        // ===============================================
 
 
 
-        // CRUD Operations for Vehicles
-        [HttpGet("GetVehicles")]
-        public async Task<IActionResult> GetVehicles()
-        {
-            return Ok(await _context.Vehicles.ToListAsync());
-        }
+        
 
         [HttpPost("CreateVehicles")]
         public async Task<IActionResult> CreateVehicle([FromBody] Vehicle vehicle)
@@ -193,6 +244,14 @@ namespace Vehicle_Backend.Controllers
             return NoContent();
         }
 
+
+
+        // ===============================================
+        //                 CRUD - SA
+        // ===============================================
+
+
+
         [HttpGet("GetSA")]
         public async Task<IActionResult> GetServiceAdvisors()
         {
@@ -204,7 +263,7 @@ namespace Vehicle_Backend.Controllers
             return Ok(advisors);
         }
 
-        // POST: api/ServiceAdvisor
+        
         [HttpPost("CreateSA")]
         public async Task<IActionResult> CreateServiceAdvisor([FromBody] User advisor)
         {
@@ -223,7 +282,7 @@ namespace Vehicle_Backend.Controllers
             return CreatedAtAction(nameof(GetServiceAdvisors), new { id = advisor.Id }, advisor);
         }
 
-        // PUT: api/ServiceAdvisor/{id}
+        
         [HttpPut("UpdateSA/{id}")]
         public async Task<IActionResult> UpdateServiceAdvisor(int id, [FromBody] User advisor)
         {
@@ -266,8 +325,6 @@ namespace Vehicle_Backend.Controllers
             return NoContent();
         }
 
-
-
         [HttpDelete("SA/{id}")]
         public async Task<IActionResult> DeleteServiceAdvisor(int id)
         {
@@ -283,6 +340,14 @@ namespace Vehicle_Backend.Controllers
 
             return NoContent();
         }
+
+
+
+        // ===============================================
+        //                 CRUD - WORKITEMS
+        // ===============================================
+
+
 
         [HttpGet("GetWorkItem")]
         public async Task<ActionResult<IEnumerable<WorkItem>>> GetWorkItems()
@@ -342,73 +407,4 @@ namespace Vehicle_Backend.Controllers
             return NoContent();
         }
     }
-    /*
-            [HttpGet]
-            public async Task<ActionResult<IEnumerable<ServiceItem>>> GetServiceItems()
-            {
-                return Ok(await _context.ServiceItems
-                    .Include(si => si.WorkItem)
-                    .Include(si => si.ServiceRecord)
-                    .ToListAsync());
-            }
-
-            [HttpGet("{id}")]
-            public async Task<ActionResult<ServiceItem>> GetServiceItem(int id)
-            {
-                var serviceItem = await _context.ServiceItems
-                    .Include(si => si.WorkItem)
-                    .Include(si => si.ServiceRecord)
-                    .FirstOrDefaultAsync(si => si.Id == id);
-
-                if (serviceItem == null)
-                {
-                    return NotFound();
-                }
-
-                return Ok(serviceItem);
-            }
-
-            [HttpPost]
-            public async Task<ActionResult<ServiceItem>> CreateServiceItem([FromBody] ServiceItem serviceItem)
-            {
-                _context.ServiceItems.Add(serviceItem);
-                await _context.SaveChangesAsync();
-
-                return CreatedAtAction(nameof(GetServiceItem), new { id = serviceItem.Id }, serviceItem);
-            }
-
-            [HttpPut("{id}")]
-            public async Task<IActionResult> UpdateServiceItem(int id, [FromBody] ServiceItem serviceItem)
-            {
-                if (id != serviceItem.Id)
-                {
-                    return BadRequest();
-                }
-
-                _context.Entry(serviceItem).State = EntityState.Modified;
-                await _context.SaveChangesAsync();
-
-                return NoContent();
-            }
-
-            [HttpDelete("{id}")]
-            public async Task<IActionResult> DeleteServiceItem(int id)
-            {
-                var serviceItem = await _context.ServiceItems.FindAsync(id);
-
-                if (serviceItem == null)
-                {
-                    return NotFound();
-                }
-
-                _context.ServiceItems.Remove(serviceItem);
-                await _context.SaveChangesAsync();
-
-                return NoContent();
-            }
-        }
-    }
-
-    }
-    */
 }

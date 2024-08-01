@@ -3,48 +3,56 @@
   "WorkspaceRootPath": "D:\\Vehicle-Management-System\\backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|d:\\vehicle-management-system\\backend\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|d:\\vehicle-management-system\\backend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|d:\\vehicle-management-system\\backend\\models\\registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|solutionrelative:models\\registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|d:\\vehicle-management-system\\backend\\models\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|solutionrelative:models\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|d:\\vehicle-management-system\\backend\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|solutionrelative:models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|d:\\vehicle-management-system\\backend\\models\\enum\\servicestatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|solutionrelative:models\\enum\\servicestatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|d:\\vehicle-management-system\\backend\\controllers\\serviceadvisorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|solutionrelative:controllers\\serviceadvisorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|d:\\vehicle-management-system\\backend\\models\\enum\\usertype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|solutionrelative:models\\enum\\usertype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|d:\\vehicle-management-system\\backend\\models\\serviceitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|solutionrelative:models\\serviceitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|d:\\vehicle-management-system\\backend\\models\\workitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|solutionrelative:models\\workitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|d:\\vehicle-management-system\\backend\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|d:\\vehicle-management-system\\backend\\models\\servicerecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|solutionrelative:models\\servicerecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|d:\\vehicle-management-system\\backend\\models\\enum\\servicestatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|solutionrelative:models\\enum\\servicestatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|d:\\vehicle-management-system\\backend\\models\\vehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|solutionrelative:models\\vehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|d:\\vehicle-management-system\\backend\\context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|solutionrelative:context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|d:\\vehicle-management-system\\backend\\controllers\\serviceadvisorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|solutionrelative:controllers\\serviceadvisorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|d:\\vehicle-management-system\\backend\\models\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|solutionrelative:models\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|d:\\vehicle-management-system\\backend\\models\\workitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|solutionrelative:models\\workitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|d:\\vehicle-management-system\\backend\\models\\serviceitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|solutionrelative:models\\serviceitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|d:\\vehicle-management-system\\backend\\models\\enum\\usertype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|solutionrelative:models\\enum\\usertype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|d:\\vehicle-management-system\\backend\\context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|solutionrelative:context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DDD3131E-55F9-4332-9BC3-1CBECB351A6D}|Vehicle Backend.csproj|d:\\vehicle-management-system\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -66,7 +74,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 247,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -78,31 +86,72 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RegisterRequest.cs",
+              "DocumentMoniker": "D:\\Vehicle-Management-System\\backend\\Models\\RegisterRequest.cs",
+              "RelativeDocumentMoniker": "Models\\RegisterRequest.cs",
+              "ToolTip": "D:\\Vehicle-Management-System\\backend\\Models\\RegisterRequest.cs",
+              "RelativeToolTip": "Models\\RegisterRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-01T21:37:52.667Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\Vehicle-Management-System\\backend\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
+              "ToolTip": "D:\\Vehicle-Management-System\\backend\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Controllers\\AuthController.cs",
+              "ViewState": "AQIAAFAAAAAAAAAAAAAAAF4AAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-01T21:32:31.883Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "D:\\Vehicle-Management-System\\backend\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
+              "ToolTip": "D:\\Vehicle-Management-System\\backend\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Controllers\\AdminController.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAAiwB4AAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-31T10:51:16.432Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Users.cs",
+              "DocumentMoniker": "D:\\Vehicle-Management-System\\backend\\Models\\Users.cs",
+              "RelativeDocumentMoniker": "Models\\Users.cs",
+              "ToolTip": "D:\\Vehicle-Management-System\\backend\\Models\\Users.cs",
+              "RelativeToolTip": "Models\\Users.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-27T11:39:11.242Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ServiceRecord.cs",
+              "DocumentMoniker": "D:\\Vehicle-Management-System\\backend\\Models\\ServiceRecord.cs",
+              "RelativeDocumentMoniker": "Models\\ServiceRecord.cs",
+              "ToolTip": "D:\\Vehicle-Management-System\\backend\\Models\\ServiceRecord.cs",
+              "RelativeToolTip": "Models\\ServiceRecord.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T18:43:29.048Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "WorkItem.cs",
-              "DocumentMoniker": "D:\\Vehicle-Management-System\\backend\\Models\\WorkItem.cs",
-              "RelativeDocumentMoniker": "Models\\WorkItem.cs",
-              "ToolTip": "D:\\Vehicle-Management-System\\backend\\Models\\WorkItem.cs",
-              "RelativeToolTip": "Models\\WorkItem.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-28T14:31:37.913Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Vehicle.cs",
-              "DocumentMoniker": "D:\\Vehicle-Management-System\\backend\\Models\\Vehicle.cs",
-              "RelativeDocumentMoniker": "Models\\Vehicle.cs",
-              "ToolTip": "D:\\Vehicle-Management-System\\backend\\Models\\Vehicle.cs",
-              "RelativeToolTip": "Models\\Vehicle.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-27T10:12:41.373Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "ServiceStatus.cs",
               "DocumentMoniker": "D:\\Vehicle-Management-System\\backend\\Models\\Enum\\ServiceStatus.cs",
               "RelativeDocumentMoniker": "Models\\Enum\\ServiceStatus.cs",
@@ -110,11 +159,77 @@
               "RelativeToolTip": "Models\\Enum\\ServiceStatus.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-27T10:14:21.111Z"
+              "WhenOpened": "2024-07-27T10:14:21.111Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
+              "Title": "LoginRequest.cs",
+              "DocumentMoniker": "D:\\Vehicle-Management-System\\backend\\Models\\LoginRequest.cs",
+              "RelativeDocumentMoniker": "Models\\LoginRequest.cs",
+              "ToolTip": "D:\\Vehicle-Management-System\\backend\\Models\\LoginRequest.cs",
+              "RelativeToolTip": "Models\\LoginRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-27T20:06:15.437Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "WorkItem.cs",
+              "DocumentMoniker": "D:\\Vehicle-Management-System\\backend\\Models\\WorkItem.cs",
+              "RelativeDocumentMoniker": "Models\\WorkItem.cs",
+              "ToolTip": "D:\\Vehicle-Management-System\\backend\\Models\\WorkItem.cs",
+              "RelativeToolTip": "Models\\WorkItem.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-28T14:31:37.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Vehicle.cs",
+              "DocumentMoniker": "D:\\Vehicle-Management-System\\backend\\Models\\Vehicle.cs",
+              "RelativeDocumentMoniker": "Models\\Vehicle.cs",
+              "ToolTip": "D:\\Vehicle-Management-System\\backend\\Models\\Vehicle.cs",
+              "RelativeToolTip": "Models\\Vehicle.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-27T10:12:41.373Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ServiceAdvisorController.cs",
+              "DocumentMoniker": "D:\\Vehicle-Management-System\\backend\\Controllers\\ServiceAdvisorController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ServiceAdvisorController.cs",
+              "ToolTip": "D:\\Vehicle-Management-System\\backend\\Controllers\\ServiceAdvisorController.cs",
+              "RelativeToolTip": "Controllers\\ServiceAdvisorController.cs",
+              "ViewState": "AQIAAFsAAAAAAAAAAAA8wD4AAABgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-27T12:21:46.147Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ServiceItem.cs",
+              "DocumentMoniker": "D:\\Vehicle-Management-System\\backend\\Models\\ServiceItem.cs",
+              "RelativeDocumentMoniker": "Models\\ServiceItem.cs",
+              "ToolTip": "D:\\Vehicle-Management-System\\backend\\Models\\ServiceItem.cs",
+              "RelativeToolTip": "Models\\ServiceItem.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-27T10:13:15.329Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "UserType.cs",
               "DocumentMoniker": "D:\\Vehicle-Management-System\\backend\\Models\\Enum\\UserType.cs",
               "RelativeDocumentMoniker": "Models\\Enum\\UserType.cs",
@@ -126,80 +241,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ServiceAdvisorController.cs",
-              "DocumentMoniker": "D:\\Vehicle-Management-System\\backend\\Controllers\\ServiceAdvisorController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ServiceAdvisorController.cs",
-              "ToolTip": "D:\\Vehicle-Management-System\\backend\\Controllers\\ServiceAdvisorController.cs",
-              "RelativeToolTip": "Controllers\\ServiceAdvisorController.cs",
-              "ViewState": "AQIAAFQAAAAAAAAAAAAuwHEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-27T12:21:46.147Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "D:\\Vehicle-Management-System\\backend\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
-              "ToolTip": "D:\\Vehicle-Management-System\\backend\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "Controllers\\AdminController.cs",
-              "ViewState": "AQIAAO8AAAAAAAAAAAAuwOIAAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-31T10:51:16.432Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Users.cs",
-              "DocumentMoniker": "D:\\Vehicle-Management-System\\backend\\Models\\Users.cs",
-              "RelativeDocumentMoniker": "Models\\Users.cs",
-              "ToolTip": "D:\\Vehicle-Management-System\\backend\\Models\\Users.cs",
-              "RelativeToolTip": "Models\\Users.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAABIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-27T11:39:11.242Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ServiceItem.cs",
-              "DocumentMoniker": "D:\\Vehicle-Management-System\\backend\\Models\\ServiceItem.cs",
-              "RelativeDocumentMoniker": "Models\\ServiceItem.cs",
-              "ToolTip": "D:\\Vehicle-Management-System\\backend\\Models\\ServiceItem.cs",
-              "RelativeToolTip": "Models\\ServiceItem.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-27T10:13:15.329Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ServiceRecord.cs",
-              "DocumentMoniker": "D:\\Vehicle-Management-System\\backend\\Models\\ServiceRecord.cs",
-              "RelativeDocumentMoniker": "Models\\ServiceRecord.cs",
-              "ToolTip": "D:\\Vehicle-Management-System\\backend\\Models\\ServiceRecord.cs",
-              "RelativeToolTip": "Models\\ServiceRecord.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwA0AAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-29T18:43:29.048Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "LoginRequest.cs",
-              "DocumentMoniker": "D:\\Vehicle-Management-System\\backend\\Models\\LoginRequest.cs",
-              "RelativeDocumentMoniker": "Models\\LoginRequest.cs",
-              "ToolTip": "D:\\Vehicle-Management-System\\backend\\Models\\LoginRequest.cs",
-              "RelativeToolTip": "Models\\LoginRequest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAA8AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-27T20:06:15.437Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "Context.cs",
               "DocumentMoniker": "D:\\Vehicle-Management-System\\backend\\Context.cs",
               "RelativeDocumentMoniker": "Context.cs",
@@ -211,7 +253,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Vehicle-Management-System\\backend\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -223,7 +265,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "VehicleController.cs",
               "DocumentMoniker": "D:\\Vehicle-Management-System\\backend\\Controllers\\VehicleController.cs",
               "RelativeDocumentMoniker": "Controllers\\VehicleController.cs",
@@ -235,7 +277,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "launchSettings.json",
               "DocumentMoniker": "D:\\Vehicle-Management-System\\backend\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Properties\\launchSettings.json",
@@ -244,10 +286,6 @@
               "ViewState": "AQIAABEAAAAAAAAAAABRwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-07-27T19:54:35.085Z"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
             }
           ]
         }
